@@ -1,8 +1,9 @@
 defmodule GuessingGame do
+  use Application
   # Guess between range of numbers.
   # Tell user guess.
 
-  def start do
+  def start(_type, _args) do
     range = IO.gets("What range is your number in(ex. 1-100)? \n")
             |> String.trim
             |> String.split("-")
@@ -38,5 +39,3 @@ defmodule GuessingGame do
     guess(low, new_high)
   end
 end
-
-GuessingGame.start
